@@ -1,0 +1,16 @@
+server:
+  port: 10002
+
+spring:
+  application:
+    name: rabbitmq-consumer
+  rabbitmq:
+    host: 117.50.174.141
+    username: "admin"
+    password: "123456"
+    virtual-host: demo
+    port: 5672
+    listener:
+      simple:
+        # ack 手动答交
+        acknowledge-mode: manual

@@ -1,0 +1,8 @@
+org/example/rabbitmq/producer/RabbitmqProducerApplication.class
+org/example/rabbitmq/producer/FanoutConfig.class
+org/example/rabbitmq/producer/RabbitMqConfig.class
+org/example/rabbitmq/producer/DelayQueueConfig.class
+org/example/rabbitmq/producer/TopicConfig.class
+org/example/rabbitmq/producer/controller/RabbitMqController.class
+org/example/rabbitmq/producer/DirectConfig.class
+org/example/rabbitmq/producer/HeadersConfig.class
