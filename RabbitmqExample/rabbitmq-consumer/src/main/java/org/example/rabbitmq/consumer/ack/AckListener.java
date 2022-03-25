@@ -33,14 +33,15 @@ public class AckListener {
             //消息消费的代码写到这里
             String msg = new String(message.getBody());
             log.info("msg:{}",msg );
-            //消费完成后，手动 ack
-            channel.basicAck(deliveryTag, false);
+            // 消费完成后，手动 ack   如果我不ack 会与重试有关吗 ? 不会负载到这个服务了，控制台显示消息未确认 当重启服务的时候还是会重新消费
+            // 怎么样保证幂等呢？
+//            channel.basicAck(deliveryTag, false);
         } catch (Exception e) {
             //手动 nack
             try {
                 channel.basicNack(deliveryTag, false, true);
             } catch (IOException ex) {
-                ex.printStackTrace();
+                log.error("[消息拒绝] error!",ex);
             }
         }
     }

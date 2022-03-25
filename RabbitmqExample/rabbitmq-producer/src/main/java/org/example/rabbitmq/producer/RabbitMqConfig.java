@@ -46,6 +46,9 @@ public class RabbitMqConfig implements RabbitTemplate.ReturnCallback, RabbitTemp
         if( !ack){
             log.error("[消息确认] 确认失败， 严重，correlationData:{},cause:{}", correlationData, cause );
         }
+        else {
+            log.info("[消息确认] 确认成功,correlationData:{}",correlationData);
+        }
     }
 
     @Override

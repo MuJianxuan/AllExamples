@@ -10,14 +10,14 @@ spring:
     password: "123456"
     virtual-host: demo
     port: 5672
-    listener:
-      simple:
-        acknowledge-mode: auto  # 自动ack
-        retry:
-          enabled: true
-          # 重试次数
-          max-attempts: 2
-          max-interval: 10000   # 重试最大间隔时间
-          initial-interval: 2000  # 重试初始间隔时间
-          multiplier: 2 # 间隔时间乘子，间隔时间*乘子=下一次的间隔时间，最大不能超过设置的最大间隔时间
+#    listener:
+#      simple:
+#        acknowledge-mode: auto  # 自动ack
+#        retry:
+#          enabled: true
+#          # 重试次数
+#          max-attempts: 2
+#          max-interval: 10000   # 重试最大间隔时间
+#          initial-interval: 2000  # 重试初始间隔时间
+#          multiplier: 2 # 间隔时间乘子，间隔时间*乘子=下一次的间隔时间，最大不能超过设置的最大间隔时间
 
