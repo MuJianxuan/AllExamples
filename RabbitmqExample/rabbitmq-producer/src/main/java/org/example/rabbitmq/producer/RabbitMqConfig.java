@@ -42,18 +42,16 @@ public class RabbitMqConfig implements RabbitTemplate.ReturnCallback, RabbitTemp
      */
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-        if (ack) {
-            // 当 发送到不存在的消息队列时，ack会为ture  但同时会执行  returnedMessage 回调
-            log.info("消息成功到达交换器");
-        }else{
-            log.error("{}:消息发送失败", correlationData.getId());
+        // ack 失败!
+        if( !ack){
+            log.error("[消息确认] 确认失败， 严重，correlationData:{},cause:{}", correlationData, cause );
         }
     }
 
     @Override
     public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
         // 执行了此回调表示消息未路由到 实际队列中
-        log.error("{}:消息未成功路由到队列",message.getMessageProperties().getMessageId());
+        log.error("[消息路由失败] 严重，message:{},replyCode:{},,replyText:{},exchange:{},routingKey:{}",message,replyCode,replyText,exchange,routingKey);
     }
 
 

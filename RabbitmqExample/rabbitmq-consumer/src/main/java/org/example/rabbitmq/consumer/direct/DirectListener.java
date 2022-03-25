@@ -20,6 +20,8 @@ public class DirectListener {
 
     /**
      * rabbitmq 启动不会先注册新的 队列，会导致这个启动不起来。 wdf
+     *   情况1: 生产者发送对象 user ，接收者只用string
+     *
      * @param msg
      * @param channel
      */

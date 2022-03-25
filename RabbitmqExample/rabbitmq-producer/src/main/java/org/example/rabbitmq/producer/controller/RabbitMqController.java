@@ -1,6 +1,7 @@
 package org.example.rabbitmq.producer.controller;
 
 import lombok.AllArgsConstructor;
+import org.example.rabbitmq.producer.entity.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
@@ -20,6 +21,16 @@ import java.nio.charset.StandardCharsets;
 public class RabbitMqController {
 
     private final AmqpTemplate amqpTemplate;
+
+    /**
+     * 发送消息到队列中
+     * @return
+     */
+    @PostMapping("sendUserToDefaultExchangeQueue")
+    public String  sendMsgToDefaultExchangeQueue() {
+        amqpTemplate.convertAndSend("defaultExchangeQueue",new User("Rao"));
+        return "ok";
+    }
 
     @PostMapping("sendMsgToDefaultExchangeQueue")
     public String  sendMsgToDefaultExchangeQueue(String msg) {

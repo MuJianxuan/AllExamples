@@ -16,5 +16,5 @@ spring:
 #        # ack 手动答交
 #        acknowledge-mode: none
     # 生产者
-#    publisher-confirm-type: correlated
-#    publisher-returns: on
+    publisher-confirm-type: correlated
+    publisher-returns: on

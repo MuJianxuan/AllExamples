@@ -10,7 +10,3 @@ spring:
     password: "123456"
     virtual-host: demo
     port: 5672
-#    listener:
-#      simple:
-#        # ack 手动答交
-#        acknowledge-mode: none

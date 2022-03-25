@@ -25,6 +25,9 @@ public class DirectConfig  {
         return new Queue("defaultExchangeQueue");
     }
 
+
+
+
     /**
      * 过期消息队列
      * @return
@@ -33,6 +36,9 @@ public class DirectConfig  {
     public Queue expireMsgQueue(){
         return new Queue("expireMsgQueue");
     }
+
+
+
 
     // 使用自定义的
 
