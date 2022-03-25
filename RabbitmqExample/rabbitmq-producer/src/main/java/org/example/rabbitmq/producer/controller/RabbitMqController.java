@@ -102,5 +102,16 @@ public class RabbitMqController {
         return "ok";
     }
 
+    /**
+     * 发送消息到 ack队列
+     * @param msg
+     * @return
+     */
+    @PostMapping("sendMsgToAckQueue")
+    public String sendMsgToAckQueue(String msg) {
+        amqpTemplate.convertAndSend("ackQueue",msg);
+        return "ok";
+    }
+
 
 }

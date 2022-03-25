@@ -52,13 +52,15 @@ public class DelayQueueConfig {
     }
 
     /**
-     * 重点来了
+     *  需要注意的是  死信队列绑定的对象是 队列！
      * @return
      */
     @Bean
     public Queue orderQueue(){
+
         Map<String, Object> args = new HashMap<>(2);
         //设置消息过期时间  一开始设置成 10， 再修改成 1000就出问题了 因此可能需要使用 message来实现  ,这个值优先
+        // 需要留意的是 这个值一旦设定，这边不可以再修改,否则启动会报错，控制台未找到可修改的操作
         args.put("x-message-ttl", 100000);
         //设置死信交换机
         args.put("x-dead-letter-exchange", "dlxExchange");
