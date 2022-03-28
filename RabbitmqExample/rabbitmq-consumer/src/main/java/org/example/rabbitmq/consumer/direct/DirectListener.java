@@ -2,10 +2,12 @@ package org.example.rabbitmq.consumer.direct;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -84,8 +86,11 @@ public class DirectListener {
      * @param channel
      */
     @RabbitListener(queues = "directQueue")
-    public void consumerDirectQueue(String msg,Channel channel){
+    public void consumerDirectQueue(String msg, Channel channel, Message message){
         log.info("msg:{}",msg);
+
+        log.info("message: {}",new String( message.getBody(), Charset.defaultCharset() ));
+
     }
 
 }

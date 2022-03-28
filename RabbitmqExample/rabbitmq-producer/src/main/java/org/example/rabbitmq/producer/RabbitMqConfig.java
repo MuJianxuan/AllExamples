@@ -2,10 +2,14 @@ package org.example.rabbitmq.producer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistrar;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.SimpleMessageConverter;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +18,8 @@ import javax.annotation.Resource;
 
 /**
  * desc:
+ * {@link org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration } 直接集成的...
+ * {@link SimpleMessageConverter#createMessage(java.lang.Object, org.springframework.amqp.core.MessageProperties)} 使用的是 jdk序列化
  *
  * @author create 2022/3/7 by rao
  */
@@ -34,6 +40,8 @@ public class RabbitMqConfig implements RabbitTemplate.ReturnCallback, RabbitTemp
         return new RabbitAdmin(defaultConnectionFactory);
     }
 
+
+
     /**
      *
      * @param correlationData 当ack为true时，这个值为null
@@ -47,6 +55,8 @@ public class RabbitMqConfig implements RabbitTemplate.ReturnCallback, RabbitTemp
             log.error("[消息确认] 确认失败， 严重，correlationData:{},cause:{}", correlationData, cause );
         }
         else {
+
+            // 消息序列化失败  此时我使用的是 自动ack！ 也会 ack 是成功 ，是否 开启手动ack可以避免这种情况？
             log.info("[消息确认] 确认成功,correlationData:{}",correlationData);
         }
     }
@@ -64,5 +74,11 @@ public class RabbitMqConfig implements RabbitTemplate.ReturnCallback, RabbitTemp
         rabbitTemplate.setConfirmCallback( this);
         //
         rabbitTemplate.setReturnCallback( this);
+
+        // 处理消息序列化
+        Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
+        rabbitTemplate.setMessageConverter( jackson2JsonMessageConverter );
+
     }
+
 }

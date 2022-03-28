@@ -21,8 +21,11 @@ import java.io.IOException;
 public class AckListener {
 
     /**
-     * 如果消息正常消费成功，则执行 basicAck 完成确认。
+     * 1、如果消息正常消费成功，则执行 basicAck 完成确认。
      * 如果消息消费失败，则执行 basicNack 方法，告诉 RabbitMQ 消息消费失败。
+     *
+     * 2、消息ID，幂等性人如何保证
+     *
      * @param channel
      * @param message
      */

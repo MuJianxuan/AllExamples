@@ -14,7 +14,7 @@ spring:
 #    listener:
 #      simple:
 #        # ack 手动答交
-#        acknowledge-mode: none
+#        acknowledge-mode: manual
     # 生产者
     publisher-confirm-type: correlated
     # 这个开启了，怎么没打印？

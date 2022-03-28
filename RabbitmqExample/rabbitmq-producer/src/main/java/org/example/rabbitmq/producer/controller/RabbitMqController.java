@@ -28,6 +28,7 @@ public class RabbitMqController {
      */
     @PostMapping("sendUserToDefaultExchangeQueue")
     public String  sendMsgToDefaultExchangeQueue() {
+        //这样发送是错误的， 因为接收端使用的是 msg对象
         amqpTemplate.convertAndSend("defaultExchangeQueue",new User("Rao"));
         return "ok";
     }
@@ -113,5 +114,16 @@ public class RabbitMqController {
         return "ok";
     }
 
+
+    /**
+     * 发送消息到 user队列
+     * @return
+     */
+    @PostMapping("sendUserMsgToAckQueue")
+    public String sendUserMsgToAckQueue() {
+        amqpTemplate.convertAndSend("userQueue",new User("rao"));
+//        amqpTemplate.convertAndSend("userQueue",new User());
+        return "ok";
+    }
 
 }
