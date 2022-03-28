@@ -6,6 +6,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>RabbitmqExample</module>
+        <module>RocketmqExample</module>
     </modules>
 
     <parent>
