@@ -1,26 +1,27 @@
 package org.example.rabbitmq.producer.controller;
 
-import lombok.AllArgsConstructor;
 import org.example.rabbitmq.producer.entity.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 
 /**
  * desc: rabbitmq controller
  * create 2022/3/6 by rao
  */
-@AllArgsConstructor
 @RestController
 @RequestMapping("rabbitmq")
 public class RabbitMqController {
 
-    private final AmqpTemplate amqpTemplate;
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     /**
      * 发送消息到队列中

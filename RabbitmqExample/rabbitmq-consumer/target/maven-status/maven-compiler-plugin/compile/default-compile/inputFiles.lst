@@ -1,10 +1,13 @@
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\direct\DirectListener.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\ack\AckListener.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\headers\HuaweiHeaderListener.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\headers\XiaomiHeaderListener.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\fanout\AQueueListener.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\fanout\BQueueListener.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\RabbitmqConsumerApplication.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\delay\OrderDelayMsgListener.java
+D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\RabbitMqConfig.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\topic\HuaWeiTopicListener.java
 D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\topic\XiaoMiTopicListener.java
+D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\entity\User.java
+D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\direct\DirectListener.java
+D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\fanout\BQueueListener.java
+D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-consumer\src\main\java\org\example\rabbitmq\consumer\user\UserListener.java

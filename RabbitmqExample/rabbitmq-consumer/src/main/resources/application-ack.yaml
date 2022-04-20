@@ -12,7 +12,7 @@ spring:
     port: 5672
     listener:
       simple:
-        # ack 手动答交
+        # ack 手动答交  若是非手动ACK 那么消息在解析过程中 失败也会认为是被消费的
         acknowledge-mode: manual
         retry:
           enabled: true
