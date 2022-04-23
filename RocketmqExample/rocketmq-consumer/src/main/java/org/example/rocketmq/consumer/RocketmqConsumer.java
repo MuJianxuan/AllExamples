@@ -38,6 +38,9 @@ public class RocketmqConsumer {
         }
     }
 
+    /**
+     * 消费
+     */
     @Slf4j
     @Service
     @RocketMQMessageListener(topic = "test-topic-2", consumerGroup = "my-consumer_test-topic-2")
