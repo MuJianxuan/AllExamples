@@ -2,6 +2,7 @@ package org.example.rocketmq.consumer;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
@@ -56,6 +57,7 @@ public class RocketmqConsumer {
      * 这里需要留意的是  订单对象的包路径是不同的，看序列化消息接受会不会失败
      */
     @Data
+    @NoArgsConstructor
     @AllArgsConstructor
     public static class OrderPaidEvent implements Serializable {
 

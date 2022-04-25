@@ -3,12 +3,12 @@ server:
 rocketmq:
   # 多个用;隔开
   name-server: http://117.50.174.141:9876
-  producer:
-    # 生产组
+  consumer:
+    # 组
     group: demo-group
-    # 发送消息超时时间，默认 3000
-    sendMessageTimeout: 3000
-    # 发送消息失败重试次数，默认2
-    retryTimesWhenSendFailed: 2
-    # 发送异步消息失败重试次数，默认2
-    retryTimesWhenSendAsyncFailed: 2
+    # 主体
+#    topic:
+    # 批量拉取的数量
+    pull-batch-size: 10
+    # 广播模式 BROADCASTING / 单播 CLUSTERING
+    message-model: "CLUSTERING"
