@@ -6,23 +6,25 @@ import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
+import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
 /**
- * desc: 普通消费，有序消费，延迟消费
- * @author create 2022/4/25 by rao
+ * desc: 同一个组订阅同一个topic，tag 都会消费到消息
+ *
+ * @author create 2022/4/26 by rao
  */
 @Slf4j
-public class ConsumerMain {
+public class BroadcastConsumer1Main {
     public static void main(String[] args) throws Exception {
-
         DefaultMQPushConsumer defaultMqPushConsumer = new DefaultMQPushConsumer("demo-group");
         defaultMqPushConsumer.setNamesrvAddr("http://117.50.174.141:9876");
 
-        //这里设置的是一个consumer的消费策略
+        //这里设置的是一个consumer的消费策略  所以需要防重
         //CONSUME_FROM_LAST_OFFSET 默认策略，从该队列最尾开始消费，即跳过历史消息
         //CONSUME_FROM_FIRST_OFFSET 从队列最开始开始消费，即历史消息（还储存在broker的）全部消费一遍
         //CONSUME_FROM_TIMESTAMP 从某个时间点开始消费，和setConsumeTimestamp()配合使用，默认是半个小时以前
         defaultMqPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
+        defaultMqPushConsumer.setMessageModel( MessageModel.BROADCASTING);
 
         // 表示订阅的 Topic 和 tag * 表示All
         defaultMqPushConsumer.subscribe("test-main","*");
@@ -49,7 +51,6 @@ public class ConsumerMain {
         } finally {
             defaultMqPushConsumer.shutdown();
         }
-
 
     }
 }

@@ -1,13 +1,4 @@
-org\example\rabbitmq\consumer\headers\HuaweiHeaderListener.class
-org\example\rabbitmq\consumer\delay\OrderDelayMsgListener.class
-org\example\rabbitmq\consumer\headers\XiaomiHeaderListener.class
-org\example\rabbitmq\consumer\direct\DirectListener.class
-org\example\rabbitmq\consumer\entity\User.class
-org\example\rabbitmq\consumer\fanout\BQueueListener.class
-org\example\rabbitmq\consumer\RabbitmqConsumerApplication.class
-org\example\rabbitmq\consumer\ack\AckListener.class
-org\example\rabbitmq\consumer\topic\HuaWeiTopicListener.class
-org\example\rabbitmq\consumer\fanout\AQueueListener.class
-org\example\rabbitmq\consumer\RabbitMqConfig.class
-org\example\rabbitmq\consumer\user\UserListener.class
-org\example\rabbitmq\consumer\topic\XiaoMiTopicListener.class
+org/example/rabbitmq/consumer/entity/User.class
+org/example/rabbitmq/consumer/RabbitMqConfig.class
+org/example/rabbitmq/consumer/user/UserListener.class
+org/example/rabbitmq/consumer/ack/AckListener.class

@@ -1,9 +1,9 @@
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\DirectConfig.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\HeadersConfig.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\DelayQueueConfig.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\TopicConfig.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\RabbitmqProducerApplication.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\entity\User.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\RabbitMqConfig.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\controller\RabbitMqController.java
-D:\BDevelop\AProject\My Project\AllExamples\RabbitmqExample\rabbitmq-producer\src\main\java\org\example\rabbitmq\producer\FanoutConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/RabbitMqConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/DelayQueueConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/HeadersConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/FanoutConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/entity/User.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/TopicConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/RabbitmqProducerApplication.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/DirectConfig.java
+/Users/rao/Documents/project/study/examples/AllExamples/RabbitmqExample/rabbitmq-producer/src/main/java/org/example/rabbitmq/producer/controller/RabbitMqController.java

@@ -10,5 +10,5 @@ rocketmq:
 #    topic:
     # 批量拉取的数量
     pull-batch-size: 10
-    # 广播模式 BROADCASTING / 单播 CLUSTERING
+    # 广播模式 BROADCASTING / CLUSTERING
     message-model: "CLUSTERING"
