@@ -32,6 +32,14 @@ public class RocketmqProducer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        //study();
+
+    }
+
+    /**
+     * 学习
+     */
+    private void study() {
         //send message synchronously 发送简单消息
         rocketMqTemplate.convertAndSend("test-topic-1", "Hello, World!");
 
@@ -55,7 +63,7 @@ public class RocketmqProducer implements CommandLineRunner {
         //Send messages orderly
         rocketMqTemplate.syncSendOrderly("orderly_topic",MessageBuilder.withPayload("Hello, World").build(),"hashkey");
 
-        //rocketMqTemplate.destroy(); // notes:  once rocketMqTemplate be destroyed, you can not send any message again with this rocketMqTemplate
+        rocketMqTemplate.destroy(); // notes:  once rocketMqTemplate be destroyed, you can not send any message again with this rocketMqTemplate
     }
 
     @Data

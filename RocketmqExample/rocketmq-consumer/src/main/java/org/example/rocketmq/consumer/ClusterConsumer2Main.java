@@ -17,7 +17,8 @@ import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 @Slf4j
 public class ClusterConsumer2Main {
     public static void main(String[] args) throws Exception {
-        DefaultMQPushConsumer defaultMqPushConsumer = new DefaultMQPushConsumer("demo-group2");
+        // 一个topic只能对应一个组，topic和tag要一致。
+        DefaultMQPushConsumer defaultMqPushConsumer = new DefaultMQPushConsumer("test-main-group2");
         defaultMqPushConsumer.setNamesrvAddr("http://117.50.174.141:9876");
 
         //这里设置的是一个consumer的消费策略  所以需要防重
@@ -28,7 +29,7 @@ public class ClusterConsumer2Main {
         defaultMqPushConsumer.setMessageModel( MessageModel.CLUSTERING);
 
         // 表示订阅的 Topic 和 tag * 表示All
-        defaultMqPushConsumer.subscribe("test-main","tag1 || tag2");
+        defaultMqPushConsumer.subscribe("test-main-test","*");
         //
         defaultMqPushConsumer.registerMessageListener((MessageListenerConcurrently) (list, consumeConcurrentlyContext) -> {
 

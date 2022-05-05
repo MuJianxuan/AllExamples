@@ -3,12 +3,13 @@ server:
 rocketmq:
   # 多个用;隔开
   name-server: http://117.50.174.141:9876
-  consumer:
-    # 组
-    group: demo-group
-    # 主体
-#    topic:
-    # 批量拉取的数量
-    pull-batch-size: 10
-    # 广播模式 BROADCASTING / CLUSTERING
-    message-model: "CLUSTERING"
+  # 具体查看 ExtRocketMQConsumerConfiguration
+#  consumer:
+#    # 组
+#    group: "demo-group"
+#    # Topic
+#    topic: "Rao"
+#    # 批量拉取的数量
+#    pull-batch-size: 10
+#    # 广播模式 BROADCASTING / CLUSTERING
+#    message-model: "CLUSTERING"

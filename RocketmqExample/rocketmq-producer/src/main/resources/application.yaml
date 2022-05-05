@@ -5,7 +5,7 @@ rocketmq:
   name-server: http://117.50.174.141:9876
   producer:
     # 生产组
-    group: demo-group
+    group: "demo-group"
     # 发送消息超时时间，默认 3000
     sendMessageTimeout: 3000
     # 发送消息失败重试次数，默认2
