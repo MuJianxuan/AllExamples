@@ -1,16 +1,23 @@
 package org.example.rocketmq.producer;
 
+import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.client.producer.TransactionSendResult;
+import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
+import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;
+import org.apache.rocketmq.spring.core.RocketMQLocalTransactionState;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 
-import javax.annotation.Resource;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -20,10 +27,11 @@ import java.math.BigDecimal;
  * @author Rao
  * @Date 2022/04/20
  **/
+@Slf4j
 @SpringBootApplication
 public class RocketmqProducer implements CommandLineRunner {
 
-    @Resource
+    @Autowired
     private RocketMQTemplate rocketMqTemplate;
 
     public static void main(String[] args) {
@@ -34,6 +42,29 @@ public class RocketmqProducer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //study();
 
+        // 发送事务消息
+        Message<String> message = MessageBuilder.withPayload("事务消息").build();
+        TransactionSendResult transactionSendResult = rocketMqTemplate.sendMessageInTransaction("tran", message, null);
+        log.info("transactionSendResult:{}", JSON.toJSONString(transactionSendResult));
+
+    }
+
+    /**
+     * rocketmq事务消息会查监听器
+     */
+    @Slf4j
+    @RocketMQTransactionListener
+    public static class RocketMqTransactionMessageListener implements RocketMQLocalTransactionListener {
+
+        @Override
+        public RocketMQLocalTransactionState executeLocalTransaction(Message msg, Object arg) {
+            return RocketMQLocalTransactionState.COMMIT;
+        }
+
+        @Override
+        public RocketMQLocalTransactionState checkLocalTransaction(Message msg) {
+            return RocketMQLocalTransactionState.COMMIT;
+        }
     }
 
     /**
