@@ -58,11 +58,13 @@ public class RocketmqProducer implements CommandLineRunner {
 
         @Override
         public RocketMQLocalTransactionState executeLocalTransaction(Message msg, Object arg) {
-            return RocketMQLocalTransactionState.COMMIT;
+            log.info("executeLocalTransaction");
+            return RocketMQLocalTransactionState.UNKNOWN;
         }
 
         @Override
         public RocketMQLocalTransactionState checkLocalTransaction(Message msg) {
+            log.info("checkLocalTransaction");
             return RocketMQLocalTransactionState.COMMIT;
         }
     }

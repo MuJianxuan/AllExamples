@@ -1,9 +1,15 @@
 server:
   port: 0
+
+
 rocketmq:
   # 多个用;隔开
   name-server: http://117.50.174.141:9876
-  # 具体查看 ExtRocketMQConsumerConfiguration
+  consumer:
+    group: my-group1
+    topic: test
+
+# 具体查看 ExtRocketMQConsumerConfiguration
 #  consumer:
 #    # 组
 #    group: "demo-group"
@@ -13,3 +19,35 @@ rocketmq:
 #    pull-batch-size: 10
 #    # 广播模式 BROADCASTING / CLUSTERING
 #    message-model: "CLUSTERING"
+
+#rocketmq:
+#  name-server:localhost:9876
+#  consumer:
+#    group:my-group1
+#    topic:test
+#    tlsEnable:false
+demo:
+  rocketmq:
+    topic:
+      user: user-topic
+    bytesRequestTopic: bytesRequestTopic
+    stringRequestTopic: stringRequestTopic
+    objectRequestTopic: objectRequestTopic
+    genericRequestTopic: genericRequestTopic
+    bytesRequestConsumer: bytesRequestConsumer
+    stringRequestConsumer: stringRequestConsumer
+    objectRequestConsumer: objectRequestConsumer
+    genericRequestConsumer: genericRequestConsumer
+    orderTopic: order-paid-topic
+    msgExtTopic: message-ext-topic
+    transTopic: spring-transaction-topic
+    tag: tagA
+    myNameServer: http://117.50.174.141:9876
+    tlsEnable: false
+  ext:
+    consumer:
+      tlsEnable: false
+
+spring:
+  application:
+    name: demo-consumer
