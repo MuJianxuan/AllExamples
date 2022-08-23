@@ -8,6 +8,7 @@
         <module>RabbitmqExample</module>
         <module>RocketmqExample</module>
         <module>CacheExample</module>
+        <module>DDDExample</module>
     </modules>
 
     <parent>
