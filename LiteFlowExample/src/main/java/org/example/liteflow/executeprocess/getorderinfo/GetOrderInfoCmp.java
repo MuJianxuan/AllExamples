@@ -23,7 +23,7 @@ public class GetOrderInfoCmp extends NodeComponent {
         orderVo.setId( orderId);
         orderVo.setCreateBy("Rao");
 
-//        this.set
+
     }
 
 }
