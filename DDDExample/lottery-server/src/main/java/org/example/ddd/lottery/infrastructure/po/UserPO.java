@@ -14,7 +14,7 @@ public class UserPO implements Serializable {
     private Long id;
 
     /**
-     * 用户名称s
+     * 用户名称
      */
     private String name;
 
