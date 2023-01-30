@@ -11,7 +11,12 @@
 
     <!-- 订单信息查询   -->
     <chain name="getOrderInfo">
-        then(getOrderInfoCmp)
+        THEN(getOrderInfoCmp,orderInfoTotalPriceExecuteCmp)
+    </chain>
+
+<!--    并行计算-->
+    <chain name="parallelComputing">
+        WHEN(orderInfoTotalPriceExecuteCmp,orderInfoTotalPriceExecute2Cmp)
     </chain>
 
 </flow>
