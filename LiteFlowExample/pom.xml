@@ -20,4 +20,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>lite-flow-example</finalName>
+    </build>
+
 </project>
